@@ -1,0 +1,1 @@
+while read line; do id=$(echo $line|grep -o -P '(?<=id":).*?(?="labels")'); label=`(echo $line|grep -o -P '(?<="en":{"language":"en","value":").*?(?="},")'| perl -ne 'print "<tag> $_"')` ; echo $id; echo $label ; done < xaf
